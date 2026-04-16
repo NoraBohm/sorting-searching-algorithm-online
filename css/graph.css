@@ -1,0 +1,15 @@
+#bar-graph {
+    width: 90dvi;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    height: 90dvh;
+    border: black 1px;
+}
+
+.bar {
+    background: #f00;
+    height: 50%;
+}
