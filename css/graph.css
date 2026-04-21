@@ -1,18 +1,28 @@
 #bar-graph {
-    width: 90dvi;
+    width: 80dvi;
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: flex-end;
-    height: 90dvh;
+    height: 80dvh;
     border: 5px solid black;
-    --bars: 4;
+
+    /* top right bottom left */
+    padding: 5% 5% 0 5%;
+
+    border-radius: 2dvi;
 }
 
 .bar {
-    --level: 50%;
     background: #f00;
-    height: var(--level);
+    height: calc(var(--value) / var(--max-value) * 100%);
     width: calc(90% / var(--bars));
+
+    /* top-left top-right bottom-right bottom-left */
+    border-radius: 2dvi 2dvi 0 0;
+}
+
+.selected {
+    background: #f0f;
 }
