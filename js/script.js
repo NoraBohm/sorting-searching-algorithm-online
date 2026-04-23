@@ -1,7 +1,9 @@
 const bar_graph = document.getElementById("bar-graph");
+let global_values = [10, 100, 40, 15, 20];
+let wait_ms = 1000;
 
 function make_bar(value, selected) {
-    return `<div class="bar${selected ? ' selected' : ''}" style="--value: ${value}"></div>`;
+    return `<div class="bar${selected ? ' selected' : ''}" style="--value: ${value}">${value}</div>`;
 }
 
 function set_max(max_value) {
@@ -83,15 +85,12 @@ const delay = ms => new Promise(res => setTimeout(res, ms));
 async function main() {
     set_max(100);
 
-    const wait_ms = 1000;
+    console.log(global_values);
 
-    let values = [50, 75, 25, 100, 15, 10];
-    console.log(values);
+    render_bars_simple(global_values);
 
-    render_bars_simple(values);
-
-    let new_values = bubble_sort(values, wait_ms);
-    console.log(new_values);
+    global_values = bubble_sort(global_values, wait_ms);
+    console.log(global_values);
 }
 
 main().then();

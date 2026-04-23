@@ -1,3 +1,7 @@
+body {
+    font-family: sans-serif;
+}
+
 #bar-graph {
     width: 80dvi;
     display: flex;
@@ -17,10 +21,21 @@
 .bar {
     background: #f00;
     height: calc(var(--value) / var(--max-value) * 100%);
-    width: calc(90% / var(--bars));
+    --width: calc(90% / var(--bars));
+    width: var(--width);
 
     /* top-left top-right bottom-right bottom-left */
     border-radius: 2dvi 2dvi 0 0;
+    /*padding-top: 1dvi;*/
+
+    text-align: center;
+    align-content: center;
+
+    /*font-size: max(1dvi, var(--width));*/
+    /*font-size: min(2dvi, var(--width));*/
+    /*font-size: 2dvi;*/
+    font-size: min(2dvi, calc(var(--value) / var(--max-value) * 80dvi));
+    font-weight: bold;
 }
 
 .selected {
